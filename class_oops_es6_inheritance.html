@@ -1,0 +1,32 @@
+<script>
+    class Employee{
+        constructor(fullname,age,salary){
+            this.fullname = fullname;
+            this.age = age;
+            this.salary = salary;
+        }
+
+        get details_sal(){
+            return this.salary;
+        }
+    }
+
+    class foodToken extends Employee{
+        constructor(fullname,age,salary,salary_processed,eligibility_criteria){
+            super(fullname,age,salary);
+            this.salary_processed =salary_processed;
+            this.eligibility_criteria = eligibility_criteria;
+        }
+        get updated_details(){
+            return this.eligibility_criteria;
+        }
+
+    }
+
+   const objAkash = new Employee("Akash",25,40000);
+   console.log(objAkash);
+   const food_token_Akash = new foodToken(objAkash.fullname,objAkash.age,objAkash.details_sal,"yes",true);
+   console.log(food_token_Akash);
+
+   console.log(food_token_Akash.updated_details);
+</script>

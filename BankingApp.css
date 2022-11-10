@@ -1,0 +1,11 @@
+.container{
+    width:100vw;
+    height:70px;
+    text-align: center;
+    border:1px solid white;
+}
+
+.nav-logo img{
+    width:100%;
+    
+}

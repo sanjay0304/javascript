@@ -1,0 +1,15 @@
+<script>
+    const Employee={
+        firstName:"Suresh",
+        lastName:"Raj",
+        address:"Bangluru"
+    };
+
+    const jsonObject = JSON.stringify(Employee);
+    console.log(typeof jsonObject);
+
+    const jsObject = JSON.parse(jsonObject);
+    console.log(jsObject);
+    console.log(this.hasOwnProperty(this.Employee));
+
+</script>

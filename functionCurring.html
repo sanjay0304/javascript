@@ -1,0 +1,17 @@
+<script>
+    //function currying is only posssible due to the concept of closure in javascript
+    function mobile(brand){
+        console.log(brand);
+        return function(colour){
+            console.log(colour);
+            return function(processor){
+                console.log(processor);
+            }
+        }
+    }
+
+    let samsung = mobile("Samsung")("black");
+    samsung("snapdragon");
+
+
+</script>

@@ -1,0 +1,22 @@
+<script>
+    function Person(fullname,age){
+        this.fullname = fullname;
+        this.age = age;
+
+    }
+    function Child(std,roll){
+        this.std = std;
+        this.roll=roll;
+    }
+    let obj1 = new Person("Akash",23);
+    let obj2 = new Person("Sanjay",18);
+
+    let childobj = new Child(6,1);
+    let objR = [{...obj1},{...obj2}];
+    console.log(objR);
+    console.log(obj1);
+    console.log(childobj);
+    objR.forEach((obj)=>{
+        console.log(obj.fullname,obj.age);
+    })
+</script>

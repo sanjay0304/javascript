@@ -1,0 +1,20 @@
+<script>
+
+class employee{
+    constructor(fullName){
+        this.fullname = fullName;
+    }
+
+    set fullDetails(fullName){
+        this.fullname = fullName;
+    }
+
+    get fulldetail(){
+        return this.fullname;
+    }
+}
+    const obj1 = new employee("Akash");
+    console.log(obj1.fulldetail);
+    obj1.fullDetails = "Sanjay";
+    console.log(obj1.fulldetail);
+</script>

@@ -1,0 +1,25 @@
+<script>
+    let googlePay = (amount) => {
+        return new Promise((success, failure) => {
+            setTimeout(() => {
+                if (amount >= 100) {
+                    success("Payment success.");
+                }
+                else{
+                    failure("please fill your wallet.")
+                }
+            }, 3000)
+        })
+    }
+    googlePay(100).then((message)=>{
+        console.log(message);
+    }).catch((error)=>{
+        console.log(error);
+    });
+    googlePay(10).then((message)=>{
+        console.log(message);
+    }).catch((error)=>{
+        console.log(error);
+    });
+    console.log(window.Promise);
+</script>

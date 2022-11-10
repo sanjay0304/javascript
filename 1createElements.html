@@ -1,0 +1,47 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div id="id"></div>
+        <div id="demo"></div>
+        <script>
+            for(let i = 1; i<=10;i++){
+                var parent = document.createElement('p');
+                var child = document.createTextNode('Welcome to javascript');
+                parent.setAttribute('id',i);
+                parent.setAttribute('onClick','getId(event)');
+                parent.appendChild(child);
+                var demo = document.getElementById('demo');
+                demo.appendChild(parent);
+            }
+            function getId(event){
+                //event.stopPropagation();
+                var id = event.target.id;
+                var pelement = document.getElementById(id);
+                pelement.style.color='red';
+                pelement.style.fontSize='40px';
+                pelement.classList.add("box");
+                pelement.style.textAlign='center';
+                document.getElementById('id').innerHTML='paragraph '+id+' was clicked';
+
+            }
+        </script>
+        <style>
+            #demo{
+                width:auto;
+                height:100vh;
+                display:flex;
+                flex-direction: column;
+                justify-items: center;
+                align-content: center;
+            }
+            .box{
+                background-color: rgb(82, 144, 144);
+                width:auto;
+                height:100px;
+            }
+
+        </style>
+    </body>
+</html>

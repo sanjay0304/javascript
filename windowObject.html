@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <style>
+            #demo{
+                display:block;
+                margin-top:50px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- <h1 id = "h1">Welcome to window open</h1> -->
+        <button onClick="openHandler()">open flipcart</button>
+        <button onClick="closeHandler()">close it</button>
+        <button onClick="onResizeHandler()">resize</button>
+        <img id="demo" />
+    </body>
+</html>
+<script>
+    
+    // let h1 = document.getElementById("h1");
+    // // var counter = 1;
+
+    // // var showCounter = ()=>{console.log(counter)}
+
+    // // console.log(window.counter);
+    // // window.showCounter();
+    // if(window.innerWidth<600){
+    //     h1.style.color = "red";
+    // }
+    let width = window.innerWidth;
+    let hyt = window.innerHeight;
+        let input;
+       
+
+    function closeHandler(){
+        if(input){
+        input.close();
+        input= null;
+        }
+    }
+    function openHandler(){
+    
+       input =  window.open("",'','width=100px,height=200px');
+    }
+    function onResizeHandler(){
+            if(input){
+            
+            input.resizeBy("600","200");
+            input.focus();
+            }
+    }
+
+        let result = document.getElementById("demo");
+        
+        count= 0;
+        let list = ["https://rukminim1.flixcart.com/image/312/312/k9loccw0/mobile/6/8/g/apple-iphone-se-mxvv2hn-a-original-imafrcqmfh4zznmq.jpeg?q=70","https://rukminim1.flixcart.com/image/312/312/ktbu6q80/mobile/q/g/q/8i-rmx3151-realme-original-imag6zhnbsuhcqny.jpeg?q=70","https://rukminim1.flixcart.com/image/312/312/l4n2oi80/mobile/m/w/x/-original-imagfhu6bdzhnmkz.jpeg?q=70","https://rukminim1.flixcart.com/image/312/312/l4n2oi80/mobile/x/o/a/-original-imagfhu75eupxyft.jpeg?q=70","https://rukminim1.flixcart.com/image/312/312/xif0q/mobile/8/a/y/-original-imaggbtszycsgjp5.jpeg?q=70"];
+        result.src = list[0];
+        function carousel(){
+            setInterval(function(){
+                if(count<5){
+                    result.src = list[count++];
+                    
+                }else{
+                    count = 0;
+                    result.src = list[count++];
+                }
+            },2000);
+        }
+        carousel();
+    console.log(navigator.userAgent);   
+    console.log(navigator.appName);
+    console.log(navigator.appVersion); 
+    console.log(navigator.language);
+    
+
+</script>

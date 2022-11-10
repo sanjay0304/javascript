@@ -1,0 +1,21 @@
+<script>
+    //ASYNC MEANS IF THERE IS WAITING PERIOD ASSOCIATED WITH THE FUNCTION THEN...
+    //THE CODE GET PUSHED TO THE CALLBACK QUEUE BY THE EVENT LOOP...
+    //AND ONCE THE EXECUTION CALL STACK IS EMPTY THEN THE CODE GET PUSHED TO THE CALL STACK
+    //EVEN THERE IS 0 MILLISECOND WAIT TIME FOR THE CODE 
+    const func1 = ()=>{
+        setTimeout(()=>{
+            console.log("One");
+        },500);
+        
+    }
+    const func2 = ()=>{
+        console.log("Two");
+    }
+    const func3 = ()=>{
+        console.log("Three");
+    }
+    func1();
+    func2();
+    func3();
+</script>

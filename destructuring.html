@@ -1,0 +1,19 @@
+<script>
+    let list = [1,2,3];
+
+    //destructuring syntax for array
+    let [a,b,c] = list;
+    console.log(a,b,c);
+
+    //destructuring syntax for object
+    let Employee ={
+        fullName:"Sanjay",
+        salary:50000
+    }
+
+    Employee.token_food = "agh587";
+
+    let {fullName,salary,token_food} = Employee;
+    console.log(fullName,salary,token_food);
+
+</script>

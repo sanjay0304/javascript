@@ -1,0 +1,17 @@
+<script>
+    let a=2;
+    function ExceptionalHandling(){
+        try{
+            if(a==2){
+                console.log("Throwing error explicitely")
+                throw new Error("it is 2");
+            }
+
+        }catch(error){
+            console.log(error);
+        }finally{
+            console.log("final block is always executed");
+        }
+    }
+    ExceptionalHandling();
+</script>

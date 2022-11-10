@@ -1,0 +1,34 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <input id="input1" /><br/><br/>
+        <input id = "input2" type = "text" value = "+91" />
+        <button onclick="onSubmitHandler()">Submit</button>
+        <p id="result-show"></p>
+
+        <script>
+            const onSubmitHandler =()=>{
+                const formdetails ={};
+                let input1 = document.getElementById("input1").value;
+              
+                let pattern = /^[a-zA-Z0-9.]{3,30}@gmail\.(com|in)$/;
+                let email_result = pattern.test(input1);
+                let phone= document.getElementById("input2").value;
+                console.log(phone);
+
+                let pattern1 = /^[+]{1}[9]{1}[1]{1}[0-9]{10}$/;
+                let phone_result = pattern1.test(phone);
+                let p1 = document.getElementById("result-show");
+                if(phone_result && email_result){
+                    p1.innerHTML = `The value is matched`;
+                }
+                else{
+                    p1.innerHTML = `The value is not matched`; 
+                }
+                document.getElementById("input2").value = "";
+            }
+        </script>
+    </body>
+</html>

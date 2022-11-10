@@ -1,0 +1,32 @@
+<script>
+    const Employee = {
+        fullname:"Akash",
+        age:22,
+        address:"xyz employee address",
+        getFullnameDisplay:function(age,department){
+            console.log(this.fullname, this.address,age,department);
+
+        }
+    }
+    const Henry = {
+        fullname:"Henry",
+        address:"dummy Address, first floor, New Delhi-110046",
+        age:45
+    }
+    // Employee.getFullnameDisplay();
+
+
+    //***CALL METHOD WILL ACCEPT INDIVIDUAL ARGUMENT ****
+    // Employee.getFullnameDisplay.call(Henry,45);
+
+    //***APPLY METHOD WILL ACCEPT ARGUMENT AS AN ARRAY****
+    // Employee.getFullnameDisplay.apply(Henry,[45]);
+
+    //***BIND METHOD CAN ACCEPT OR BIND THE ARGUMENT partially ****
+    //***WE SHOULD ASSIGN TO A VARIABLE THE BIND METHOD******
+    //***IT WILL WORK AS A FUNCTION***
+
+    let HenryObj = Employee.getFullnameDisplay.bind(Henry,33);
+    HenryObj("Management");
+
+</script>

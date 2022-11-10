@@ -1,0 +1,20 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <p id="para1">Welcome to remove the paragraph.</p>
+        <button id="btn1">remove para1</button>
+
+        <script>
+            let para1 = document.getElementById('para1');
+            
+            let btn1 = document.getElementById('btn1'); 
+            btn1.addEventListener('click',()=>{
+                para1.remove();
+            });
+        
+        </script>
+    </body>
+</html>
+

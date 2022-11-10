@@ -1,0 +1,49 @@
+<script>
+    let arr1 = [1,2];
+    let arr2 = arr1;
+    // arr2.push("Sanjay");
+    // console.log("original array1",arr1);
+    // console.log("array 2",arr2);
+
+    // if we want to create a copy of array use Object.assign([],list)/list.slice()/[...list]
+    // let copyarr = Object.assign([],arr1);
+    // let copyarr = arr1.slice();
+
+    // let copyarr = [...arr1];
+    // copyarr.push("sanjay");
+    // console.log(arr1);
+    // console.log(copyarr);
+
+    // if we want to create a copy of object use Object.assign([]/[...list]
+    let Employee = {
+        fullName:"Sanjay",
+        age:21,
+         displayName:function(){
+            return this.fullName;
+        },
+         displayAge:function(){
+            return this.age;
+
+        }
+
+    }
+    // this will not work 
+    // let copyEmployee = Employee;
+    // copyEmployee.salary = 50000;
+
+    // use spread operator.... ****THIS WILL WORK TO CREATE A COPY OF THE OBJECT***
+    // let copyEmployee = {...Employee};
+    // copyEmployee.salary = 100000;
+    // console.log("Employee object",Employee);
+    // console.log("Employee object copy",copyEmployee);
+
+    // use Object.assign([],obj).... ****THIS WILL ALSO WORK TO CREATE A COPY OF THE OBJECT***
+    let copyEmployee = Object.assign({},Employee);
+    copyEmployee.salary = 100000;
+    
+    copyEmployee = {...copyEmployee,fullName:"Manoj"};
+
+    console.log("Employee object",Employee);
+    console.log("Employee object copy",copyEmployee);
+    console.log(Employee.displayName());
+    </script>

@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <style>
+            *{
+                box-sizing: border-box;
+                margin:0;
+                padding:0;
+            }
+            .container{
+                display:flex;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .box{
+                width:400px;
+                height:200px;
+                margin:20px;
+               text-align: center;
+               border-radius: 10px;
+               
+            }
+           
+        </style>
+    </head>
+    <body>
+        <div id="info"></div>
+        <div id='div' class="container">
+           
+        </div>
+        
+    </body>
+    <script>
+        function display(){
+            for(let i = 1; i<=9;i++){
+                let parent = document.createElement('img');
+                parent.src='https://picsum.photos/seed/picsum/200/300.jpg';
+                parent.classList.add('box');
+                parent.setAttribute('id',i);
+                parent.setAttribute('onClick','identity(event)');
+                let main_container = document.getElementById('div');
+                main_container.appendChild(parent);
+                
+            }
+        }
+        function identity(event){
+            
+            
+            let parent = document.getElementById('info');
+            parent.innerHTML = 'you clicked on the id: '+event.target.id;
+            
+        }
+
+        display();
+    </script>
+
+</html>

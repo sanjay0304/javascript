@@ -1,0 +1,23 @@
+<script>
+    const Employee =function (fullName,age){
+        this.fullName = fullName;
+        this.age = age;
+    }
+    Employee.prototype.isEligible=function(){
+        if(this.age&&this.age>=18){
+            console.log(`${this.fullName} is Eligible to vote.`);
+        }
+        else{
+            console.log(`${this.fullName} is not Eligible to vote.`);
+        }
+    }
+    const obj1 = new Employee("John",18); 
+    const obj2 = new Employee("Linda",17);
+    //console.log(obj1.hasOwnProperty("age"));
+    //console.log(obj1.__proto__);
+    console.log(obj1.__proto__);
+    obj1.isEligible();
+    obj2.isEligible();
+
+    
+</script>

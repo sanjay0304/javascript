@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+    <div class="container">
+
+    </div>
+</body>
+
+</html>
+<script>
+    //****USING CONSTRUCTOR FUNCTION*****
+    // const Employee = function(fullname,age){
+    //     this.fullname = fullname;
+    //     this.age = age;
+    // }
+    let names = ["Suresh", "Mona", "Harry", "Paul", "Deepak", "Kim", "John"];
+    let ages = [5, 88, 56, 21, 18, 36, 45];
+    let listOfObjects = [];
+
+    // Employee.prototype.init=function(){
+    // for(let i = 0 ; i < names.length; i++){
+    //     listOfObjects[i] = new Employee(names[i],ages[i]);
+    // }
+    // }
+    // let obj1 = new Employee("dummy",100);
+    // obj1.init();
+
+    let container = document.querySelector(".container");
+
+    // for(let i = 0 ; i < listOfObjects.length; i++){
+    //     const parent = document.createElement("div");
+    //     const node = document.createTextNode(listOfObjects[i].fullname);
+    //     parent.appendChild(node);
+    //     container.append(parent);
+    // }
+    //****USING ECMASCRIPT 2015 ES6 CLASS*****
+
+    // class Employee {
+    //     constructor(fullname, age) {
+    //         this.fullname = fullname;
+    //         this.age = age;
+    //     }
+    //      init() {
+    //         for (let i = 0; i < names.length; i++) {
+    //             listOfObjects[i] = new Employee(names[i], ages[i]);
+    //         }
+
+    //     }
+    //     display(){
+    //         for(let i = 0 ; i < listOfObjects.length; i++){
+    //             const parent = document.createElement("div");
+    //             const node = document.createTextNode(listOfObjects[i].fullname);
+    //             parent.appendChild(node);
+    //             container.append(parent);
+    //         }
+    //     }
+    // }
+    // const dummy = new Employee("dummy",100);
+
+    // dummy.init();dummy.display();
+
+    //****USING Object.create *****
+
+    let Employee ={
+        isEligible:function(){
+           if(this.age && this.age>=18){
+            return true;
+           }else{
+            return false;
+           }
+        }
+    };
+    let obj1 = Object.create(Employee);
+    obj1.age = 15;
+    obj1.fullName = "John";
+    obj1.iseligible = obj1.isEligible()?"Eligible":"Not Eligible";
+    console.log(obj1.iseligible);
+    console.log(`${obj1.fullName} is ${obj1.iseligible}`);
+
+
+
+
+</script>

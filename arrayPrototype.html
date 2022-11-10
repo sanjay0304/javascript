@@ -1,0 +1,15 @@
+<script>
+    const list = [1,2,3,4];
+    console.log(list.__proto__);
+    
+    console.log(list.__proto__===Object.prototype);
+
+    Array.prototype.isAllEven = function(){
+        for(let i =0; i<this.length;i++){
+            if(this[i]%2===0){
+                return false;
+            }
+        }
+        return true;
+    }
+</script>

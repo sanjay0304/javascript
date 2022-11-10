@@ -1,0 +1,32 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <input id="input1" /><br/><br/>
+        <button onclick="onSubmitHandler()">Submit</button>
+        <p id="result-show"></p>
+
+        <script>
+            const onSubmitHandler =()=>{
+                let input1 = document.getElementById("input1").value;
+                //let pattern = /^[a-z]$/;//letters from a-z only one
+                //let pattern = /^[a-z][a-z][a-z]$/ig; three letters case insensitive
+                // let pattern = /^[a-zA-Z0-9]+$/;//atleast one character or more
+                let pattern = /^[a-zA-Z0-9]*$/; //alphanumeric zero or more
+
+                // let pattern1 = /^[789]{1}[0-9]{9}$/;//starting with 7or8or9 maximum 1 
+                 let pattern1 = /^[a-zA-Z0-9]{3,40}@rediffmail\.(com|in)$/;
+                let result = pattern1.test(input1);
+                let p1 = document.getElementById("result-show");
+                if(result){
+                    p1.innerHTML = `The value is matched`;
+                }
+                else{
+                    p1.innerHTML = `The value is not matched`; 
+                }
+                document.getElementById("input1").value = "";
+            }
+        </script>
+    </body>
+</html>

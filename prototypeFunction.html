@@ -1,0 +1,30 @@
+<script>
+    //constructor function
+    function Person(fullname,age){
+        this.fullname = fullname;
+        this.age = age;
+    }
+    Person.prototype.calculateAge = function(){
+        console.log(this.age);
+    }
+    //inheritance 
+
+    let obj1 = new Person("Akash",23);
+    // obj1.calculateAge=function(){
+    //     console.log(this.age);
+    // }
+    obj1.calculateAge();
+
+    let obj2= new Person("Akash",44);
+
+    obj2.calculateAge();
+    console.log(obj2.__proto__);
+
+    let arr = [1,2,3];
+    console.log(arr.__proto__);
+
+    console.log(obj1.hasOwnProperty("fullname"));
+
+    
+
+</script>

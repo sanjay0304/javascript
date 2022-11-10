@@ -1,0 +1,32 @@
+<script>
+    //***NORMAL IIFE IMMEDIATELY INVOKE FUNCTION EXPRESSION INITIAL LOAD OF THE PAGE
+    //*** CANNOT CALL IT EXPLICITELY. GET CALLED AUTOMATICALLY WHEN PAGE LOADS
+    //*** IN REACT WE USE useEffect() in FUNCTIONAL COMPONENT
+    //*** componentDidMount() method in class based component are similar to it.
+    //*** IT IS THE VANILLA JAVASCRIPT BASE CODE TO RENDER INITIAL DATA WHEN PAGE LOADS...
+
+    // (function(){
+    //     alert("Initial load");
+    // })();
+
+    (()=>{
+        alert("Initial load");
+        const Employee = {
+            fullname:"",
+            age:"",
+            displayWindowObject :()=>{
+
+                console.log(this);
+            }
+        };
+        
+        //console.log(Employee);
+        Employee.fullname="Akash";
+        Employee.age=22;
+       // console.log(Employee.fullname,Employee.age);
+        Employee.displayWindowObject();
+        
+        })();
+
+        
+</script>

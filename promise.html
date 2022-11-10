@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .container {
+            max-width: 500px;
+            max-height: 500px;
+            border: 1px solid green;
+            text-align: center;
+            color: blue;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+
+    (function () {
+        const response = fetch("http://localhost:3000/product");
+        response.then((result) => {
+            return result.json();
+
+        }).then((data) => {
+            const container = document.createElement('div');
+            container.classList.add("container");
+            document.body.appendChild(container);
+            const textNode = document.createTextNode("Hi how are you");
+            container.appendChild(textNode);
+            data.map((obj) => {
+                const child = document.createElement("div");
+                const text = document.createTextNode(obj.id);
+                child.appendChild(text);
+                container.appendChild(child);
+            })
+        });
+
+
+
+    })();
+
+</script>

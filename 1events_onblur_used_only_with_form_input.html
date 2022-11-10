@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .divError1,.divError2{
+                display:none;
+            }
+            .container{
+                height:100vh;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+            }
+            #fname{
+                border-top: none;
+                border-right: none;
+                border-left: none;
+                border-bottom: 1px solid blue;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class='container'>
+        <form action="./word_highlighter.html" target="_top">
+        FirstName:<input type="text" name="fname" id="fname" onfocus="onFocusHandler1(event)" onblur="onblurhandler(event)" />
+            
+            <div class = "divError1" id="msg1"></div>
+            <br>
+            <br>
+        LastName:<input type="text" name="lname" id="lname" onfocus="onFocusHandler2(event)" onblur="onblurhandler(event)" />
+            <div class = "divError2" id="msg2"></div>
+            <br>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+        <script>
+            function onblurhandler(event){
+                const fname = event.target.value;
+                if(!fname && event.target.name==='fname'){
+                    let input_name = document.getElementById('msg1');
+                    input_name.innerHTML = "Please enter your " +event.target.name;
+                    input_name.style.color='red';
+                    input_name.style.display='block';
+                    input_name.style.marginLeft = "70px";
+
+                }else if(!fname && event.target.name==='lname'){
+                    let input_name2 = document.getElementById('msg2');
+                    input_name2.innerHTML = "Please enter your " +event.target.name;
+                    input_name2.style.color='red';
+                    input_name2.style.display='block';
+                    input_name2.style.marginLeft = "70px";
+                }
+            }
+            function onFocusHandler1(event){
+                let msg1= document.getElementById("msg1");
+
+                msg1.style.display='none';
+            }
+            function onFocusHandler2(event){
+                let input_name = document.getElementById("msg2");
+
+                input_name.style.display='none';
+            }
+
+        </script>
+    </body>
+
+
+</html>
